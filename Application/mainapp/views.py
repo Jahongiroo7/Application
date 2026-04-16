@@ -7,12 +7,12 @@ from .models import Worker, Application, Category
 from .serializers import ApplicationSerializer, CategorySerializer, WorkerSerializer
 
 class our_pagination(pagination.PageNumberPagination):
-    page_size = 3
+    page_size = 12
     page_size_query_param = 'page_size'
     max_page_size = 10000
 
 class ApplicationViewSet(viewsets.ModelViewSet):
-    queryset = Application.objects.filter(status='qabul_qilingan')
+    queryset = Application.objects.all()
     serializer_class = ApplicationSerializer
 
 class CategoryViewSet(viewsets.ModelViewSet):
